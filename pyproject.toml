@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tago-reference"
+version = "0.1.0"
+description = "Reference metrics and validation tools for evidence-grounded optimization modeling"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["tago*"]
+

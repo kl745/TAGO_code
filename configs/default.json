@@ -1,0 +1,28 @@
+{
+  "method": "TAGO",
+  "output_schema": ["sets", "parameters", "variables", "objective", "constraints"],
+  "sft": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0002,
+    "epochs": 3,
+    "max_sequence_length": 8192
+  },
+  "rl": {
+    "algorithm": "GRPO",
+    "rollouts_per_prompt": 8,
+    "learning_rate": 0.000002,
+    "max_prompt_length": 2048,
+    "max_response_length": 8192,
+    "group_std_threshold": 0.05,
+    "kl_coefficient": 0.002,
+    "ker_beta_squared": 2.0,
+    "reward_variant": "full",
+    "easy_fraction_schedule": [0.6, 0.2, 0.0]
+  },
+  "evaluation": {
+    "objective_relative_tolerance": 0.0001,
+    "pass_k": [1, 4, 8, 16],
+    "solver_timeout_seconds": 60
+  }
+}
+
